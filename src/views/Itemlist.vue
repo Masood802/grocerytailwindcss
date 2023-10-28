@@ -3,7 +3,7 @@
     <Header></Header>
   </div>
 
-  <h1 class="text-2xl text-green-950 font-semibold font-serif text-center my-4">
+  <h1 class="text-2xl text-green-950 font-semibold font-serif text-center mt-20 mb-4 ">
     list of items
   </h1>
   <div class="w-full flex flex-wrap justify-center mx-auto items-center">
