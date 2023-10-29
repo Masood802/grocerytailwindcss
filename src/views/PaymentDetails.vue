@@ -1,6 +1,14 @@
 <template>
-  <div class="main"></div>
-  <div class="navs"><Header></Header></div>
+  <div
+    class="z-50 fixed w-full h-16 bg-gradient-to-br from-green-500 to-yellow-400 shadow-md"
+  >
+    <Header></Header>
+  </div>
+  <div
+    class="w-full h-screen bg-cover blur-sm mx-1 bg-fixed z-0"
+    style="background-image: url('public/background11.jpg')"
+  ></div>
+
   <div class="payment">
     <div class="card">
       <img src="../assets/pngwing.png" alt="" />
