@@ -1,10 +1,13 @@
 <template>
-  <div class="p-2 bg-green-400 fixed w-full">
+  <div class="p-2 bg-green-400 fixed w-full z-50">
     <Header></Header>
   </div>
-  <div id="main"></div>
-  <div>
-    <h1 class="text-center text-red-500 text-3xl font-bold">About Us</h1>
+  <div
+    class="bg-center bg-cover w-full h-96 top-10 z-0 bg-fixed"
+    style="background-image: url('public/main.jpg')"
+  ></div>
+  <div class="w-full">
+    <h1 class="text-center text-red-500 text-3xl font-bold z-50">About Us</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, impedit
       ipsum illo hic minus nobis minima praesentium recusandae excepturi! Facere
@@ -20,11 +23,14 @@
       exercitationem magnam!
     </p>
   </div>
-  <div class="footer">contact us</div>
+  <div class="absolute bg-slate-200 w-full py-5 top-[100%] bottom-10">
+    <the-footer></the-footer>
+  </div>
 </template>
 <script setup>
 import { onMounted, ref } from "vue";
 import Header from "../components/Header.vue";
+import TheFooter from "../components/TheFooter.vue";
 </script>
 <style scoped>
 #main {

@@ -41,7 +41,7 @@
       </button>
     </div>
   </div>
-  <div class="a bg-slate-200 w-full py-4 bottom-0">
+  <div class=" bg-slate-200 w-full py-4 bottom-0">
 <the-footer></the-footer>
   </div>
 </template>

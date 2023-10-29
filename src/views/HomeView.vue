@@ -6,13 +6,15 @@ let router = useRouter();
 </script>
 
 <template>
-  <div class="z-50 fixed w-full p-3 bg-gradient-to-br from-green-500 to-yellow-400 shadow-md"><Header></Header></div>
-  <div class="w-full m-auto h-2/3">
-    <img
-      src="../assets/background11.JPG"
-      alt="image"
-      class="w-full z-0 h-screen overflow-hidden top-3 absolute"
-    />
+  <div
+    class="z-50 fixed w-full p-2 bg-gradient-to-br from-green-500 to-yellow-400 shadow-md"
+  >
+    <Header></Header>
+  </div>
+  <div
+    class="mx-auto w-full h-screen bg-cover bg-center top-16 absolute bg-fixed"
+    style="background-image: url('public/background11.JPG')"
+  >
     <div
       class="flex flex-col justify-center items-center absolute top-64 left-1/3"
     >
@@ -28,7 +30,7 @@ let router = useRouter();
       </div>
     </div>
   </div>
-  <div class="absolute bg-slate-200 w-full py-4 bottom-0">
-<the-footer></the-footer>
+  <div class="absolute bg-slate-200 w-full py-5 top-[100%]">
+    <the-footer></the-footer>
   </div>
 </template>
