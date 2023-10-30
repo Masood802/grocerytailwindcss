@@ -1,6 +1,8 @@
 <template>
-  <div class="w-full m-auto flex justify-between items-center h-12">
-    <div class="w-1/4 flex justify-between items-center">
+  <div
+    class="w-full m-auto flex justify-between items-center h-12 py-2 text-xs lg:text-base"
+  >
+    <div class="w-[60%] flex justify-between items-center lg:w-1/4">
       <div
         class="flex flex-col items-center mt-3 ml-2 text-blue-800 leading-tight"
         @click="router.push('/')"
@@ -16,7 +18,7 @@
       </router-link>
       <router-link :to="{ path: '/cart' }" class="text-lime-800">
         Cart
-        <sup class="text-red-700 font-semibold text-base">{{
+        <sup class="text-red-700 font-semibold lg:text-base">{{
           store.totalitems
         }}</sup>
       </router-link>

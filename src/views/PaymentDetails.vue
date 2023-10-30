@@ -8,10 +8,9 @@
     class="w-full h-screen bg-cover blur-sm mx-1 bg-fixed z-0"
     style="background-image: url('public/background11.jpg')"
   ></div>
-
-  <div class="payment">
+  <div class="w-1/2 absolute top-24 left-80 h-screen border">
     <div class="card">
-      <img src="../assets/pngwing.png" alt="" />
+      <img src="../assets/chip.png" alt="" />
       <pre>{{ cardNo }}</pre>
       <h3>{{ HolderName }}</h3>
       <h5>VALID THRU<br />{{ month }}/{{ year }}</h5>

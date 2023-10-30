@@ -23,7 +23,7 @@
       exercitationem magnam!
     </p>
   </div>
-  <div class="absolute bg-slate-200 w-full py-5 top-[100%] bottom-10">
+  <div class="absolute bg-slate-200 w-full py-5 top-[100%] bottom-10 flex justify-center items-center">
     <the-footer></the-footer>
   </div>
 </template>
@@ -32,13 +32,4 @@ import { onMounted, ref } from "vue";
 import Header from "../components/Header.vue";
 import TheFooter from "../components/TheFooter.vue";
 </script>
-<style scoped>
-#main {
-  background-image: url("../assets/main.jpg");
-  width: 100%;
-  height: 30em;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
+
