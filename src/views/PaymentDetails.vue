@@ -9,9 +9,9 @@
     style="background-image: url('public/background11.jpg')"
   ></div>
   <div class="w-1/2 absolute top-24 left-80 h-screen border">
-    <div class="card">
+    <div class=" w-[80%] h-72 rounded-lg " style="background-image: url('public/20.jpeg');">
       <img src="../assets/chip.png" alt="" />
-      <pre>{{ cardNo }}</pre>
+      <pre class="text-center text-sm">{{ cardNo }}</pre>
       <h3>{{ HolderName }}</h3>
       <h5>VALID THRU<br />{{ month }}/{{ year }}</h5>
     </div>
