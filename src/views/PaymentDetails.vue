@@ -8,40 +8,73 @@
     class="w-full h-screen bg-cover blur-sm mx-1 bg-fixed z-0"
     style="background-image: url('public/background11.jpg')"
   ></div>
-  <div class="w-1/2 absolute top-24 left-80 h-screen border">
-    <div class=" w-[80%] h-72 rounded-lg " style="background-image: url('public/20.jpeg');">
-      <img src="../assets/chip.png" alt="" />
-      <pre class="text-center text-sm">{{ cardNo }}</pre>
-      <h3>{{ HolderName }}</h3>
-      <h5>VALID THRU<br />{{ month }}/{{ year }}</h5>
-    </div>
-    <h1>Payment Information</h1>
-    <form @submit.prevent="Submit">
-      <div class="input-control">
-        <label for="name">Name on card</label>
-        <input type="text" name="name" v-model="HolderName" />
+  <div class="w-1/2 absolute top-24 left-80 h-screen border leading-tight">
+    <div
+      class="h-60 rounded-lg bg-center bg-cover bg-no-repeat relativ w-[60%] mx-auto my-10"
+      style="background-image: url('public/21.jpeg')"
+    >
+      <div class="flex justify-between items-center my-5 relative top-6">
+        <img src="../assets/chip.png" alt="" class="w-16 ml-4 h-12" />
+        <img src="../assets/visa.png" alt="visa" class="w-20 mx-4 h-12" />
       </div>
-      <div class="input-control">
-        <label for="cardnum">Card No</label>
+      <pre class="text-center text-xl font-bold mt-16">{{ cardNo }}</pre>
+      <h3 class="absolute top-60 left-36 uppercase font-serif font-bold">
+        {{ HolderName }}
+      </h3>
+      <h5 class="text-xs font-bold absolute left-40 top-52">
+        VALID THRU {{ month }}/{{ year }}
+      </h5>
+    </div>
+    <h1 class="text-xl font-bold text-center my-2">Payment Information</h1>
+    <form @submit.prevent="Submit" class="w-[90%]">
+      <div class="w-full flex justify-start items-center flex-col mx-auto">
+        <label for="name" class="w-[80%] mx-auto text-slate-400 my-1"
+          >Name on Card</label
+        >
         <input
           type="text"
-          id="cardNo"
+          name="name"
+          v-model="HolderName"
+          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1"
+        />
+      </div>
+      <div class="w-full flex justify-start items-center flex-col mx-auto">
+        <label for="cardnum" class="w-[80%] mx-auto text-slate-400 my-1"
+          >Card No</label
+        >
+        <input
+          type="text"
           name="cardnum"
           v-model="cardNo"
           @input="updateCardNo"
+          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1"
         />
       </div>
-      <div class="expiry">
-        <div class="input-control-exp">
-          <label for="expiry">Expiration Date</label>
-          <input
+      <div class="flex justify-between w-full">
+          <span class="block w-full pb-1">Expiration MM</span>
+          <select
             type="text"
             name="expiry"
             placeholder="Month"
             v-model="month"
             @keyup="updatemonth"
             id="month"
-          />
+            class="w-full p-2 border border-slate-400"
+          >
+            <option value="Month" selected>Month</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
         </div>
         <div class="input-control-exp">
           <label for="expiry">&nbsp;</label>
@@ -64,7 +97,6 @@
             id="cvc"
             @input="updatecvc"
           />
-        </div>
       </div>
 
       <div class="gtotal">
@@ -127,172 +159,3 @@ function updatecvc() {
   cvc.value = document.getElementById("cvc").value;
 }
 </script>
-
-<style scoped>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.navs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 1em;
-}
-h1 {
-  margin: 0.5em auto;
-  text-align: center;
-}
-p {
-  position: relative;
-  left: 0.5em;
-  color: rgb(63, 53, 53);
-  font-weight: bold;
-  font-size: 1em;
-}
-h3 {
-  position: relative;
-  top: 5.5em;
-  left: 0.5em;
-  color: rgb(241, 224, 224);
-}
-pre {
-  position: relative;
-  top: 50px;
-  color: rgb(226, 204, 204);
-  font-weight: bold;
-  font-size: 1.2em;
-  text-indent: 2em;
-  letter-spacing: 3px;
-}
-h5 {
-  position: relative;
-  top: 6.5em;
-  left: 7.5em;
-  color: rgb(226, 204, 204);
-  text-align: center;
-}
-img {
-  width: 2em;
-  height: 2em;
-  position: relative;
-  top: 30px;
-  left: 30px;
-}
-.main {
-  width: 100%;
-  background-image: url("../assets/background11.jpg");
-  background-size: 100%;
-  height: 42em;
-  background-repeat: no-repeat;
-
-  filter: blur(5px);
-}
-.payment {
-  width: 50%;
-  height: 37em;
-  position: absolute;
-  left: 20em;
-  top: 5em;
-  z-index: 1;
-  box-shadow: 0.2em 0 0.4em 0 rgba(0, 0, 0, 0.5);
-}
-.input-control {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-.card {
-  width: 45%;
-  height: 12em;
-  box-shadow: 0.2em 0 0.4em 0 rgba(0, 0, 0, 0.5);
-  background-image: url("../assets/card.jpg");
-  border-radius: 0.5em;
-  margin: 0.5em auto;
-}
-.expiry {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 80%;
-  margin: auto;
-}
-.input-control-exp {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-}
-.input-control-exp input[type="text"] {
-  width: 90%;
-  margin: 0 1em;
-  border: 1px solid lightgray;
-  background-color: transparent;
-}
-.input-control-exp label {
-  width: 90%;
-  margin: 0.5em 2.2em;
-  color: rgb(76, 77, 78);
-  text-align: left;
-}
-.input-control-cvc {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.input-control-cvc input[type="text"] {
-  width: 45%;
-  margin: 0.5em 5.5em;
-  border: 1px solid lightgray;
-  background-color: transparent;
-}
-.input-control-cvc label {
-  width: 45%;
-  margin: 1em 5em 0 5em;
-}
-input[type="text"] {
-  width: 75%;
-  padding: 0.5em;
-  border: 1px solid lightgray;
-  background-color: transparent;
-  margin: 0.5em;
-}
-label {
-  width: 75%;
-  color: rgb(76, 77, 78);
-}
-.gtotal {
-  text-align: right;
-  margin: 1em;
-  font-weight: bold;
-  color: rgb(44, 42, 42);
-}
-button {
-  width: 75%;
-  padding: 1em 1.5em;
-  margin: 1em 5.5em;
-  border: none;
-  background-color: darkgreen;
-  color: white;
-  border-radius: 0.5em;
-  font-size: 0.8em;
-}
-.paymentok {
-  width: 50%;
-  padding: 1em;
-  background-color: beige;
-  box-shadow: 0.2em 0 0.4em 0 rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 6em;
-  left: 10.5em;
-}
-.paymentok button {
-  margin: 1.5em 3em;
-}
-</style>
