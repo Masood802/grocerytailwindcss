@@ -35,7 +35,7 @@
           type="text"
           name="name"
           v-model="HolderName"
-          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1"
+          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1 rounded"
         />
       </div>
       <div class="w-full flex justify-start items-center flex-col mx-auto">
@@ -47,11 +47,13 @@
           name="cardnum"
           v-model="cardNo"
           @input="updateCardNo"
-          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1"
+          maxlength="16"
+          class="w-[80%] py-2 bg-transparent border border-slate-300 px-1 rounded"
         />
       </div>
-      <div class="flex justify-between w-full">
-          <span class="block w-full pb-1">Expiration MM</span>
+      <div class="flex flex-1 w-full">
+        <div class="flex justify-between w-[90%] mr-1 flex-col">
+          <span class="block pb-1 w-[80%]">Expiration MM</span>
           <select
             type="text"
             name="expiry"
@@ -59,7 +61,7 @@
             v-model="month"
             @keyup="updatemonth"
             id="month"
-            class="w-full p-2 border border-slate-400"
+            class="w-[80%] p-2 border border-slate-400 rounded"
           >
             <option value="Month" selected>Month</option>
             <option value="1">1</option>
@@ -76,19 +78,30 @@
             <option value="12">12</option>
           </select>
         </div>
-        <div class="input-control-exp">
-          <label for="expiry">&nbsp;</label>
-          <input
+        <div class="flex justify-between w-[90%] flex-col">
+          <span class="block pb-1 w-[80%]">Expiration YY</span>
+          <select
             type="text"
-            name="expiry"
-            placeholder="Year"
+            name="year"
+            placeholder="year"
             v-model="year"
             @keyup="updateyear"
             id="year"
-          />
+            class="w-[80%] p-2 border border-slate-400 rounded"
+          >
+            <option value="Year" selected>Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+          </select>
         </div>
-        <div class="input-control-cvc">
-          <label for="CVC">CVC </label>
+        <div class="flex justify-between w-[90%] flex-col">
+          <span class="block pb-1 w-[80%]">CVC </span>
           <input
             type="text"
             name="CVC"
@@ -96,7 +109,10 @@
             v-model="cvc"
             id="cvc"
             @input="updatecvc"
+            maxlength="4"
+            class="w-[80%] p-2 border border-slate-400 rounded"
           />
+        </div>
       </div>
 
       <div class="gtotal">
